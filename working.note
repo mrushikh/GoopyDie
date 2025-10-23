@@ -1,0 +1,44 @@
+
+int y=1080;
+        int x=1920;
+        int h=0;
+        int w=0;
+        boolean exist=false;
+        int result=0;    
+        Robot robot1=new Robot();
+        Rectangle rec=new Rectangle();
+        Color mycolor =null;
+        rec=new Rectangle(x,y);
+        BufferedImage img=robot1.createScreenCapture(rec);
+         for(h=1079;h>0;h--){
+            for(w=0;w<1920;w++){
+                mycolor = new Color(img.getRGB(w,h));
+                int bl=mycolor.getBlue();
+                int gr=mycolor.getGreen();
+                int re=mycolor.getRed();
+                if((bl>164&&bl<213)&&(gr>146&&gr<207)&&(re<254&&re>242)){
+                    
+                    String ret=w+" ";
+                    result++;
+                    
+                    
+                }
+                // if(mycolor.equals(customColor)||mycolor.equals(customColor1)||mycolor.equals(customColor2)||mycolor.equals(customColor3)){
+                //     exist=true;
+                //     String ret=w+" ";
+                //     result=ret;
+                //     break;
+                // }
+                
+
+            }
+        }
+        
+        if (result>10) {
+                        exist=true;
+                //   break;
+        }
+        System.out.println(result);
+        return exist;
+        
+    }
