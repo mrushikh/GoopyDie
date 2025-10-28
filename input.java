@@ -239,7 +239,7 @@ public class input {
                 mycolor = new Color(img.getRGB(w,h));
                 if(mycolor.equals(customColor)||mycolor.equals(customColor1)||mycolor.equals(customColor2)||mycolor.equals(customColor3)){
                     exist=true;
-                    int ret=w;
+                    
                     result=true;
                     return mycolor.toString();
                     // break;
@@ -265,7 +265,7 @@ public class input {
         int h=0;
         int w=0;
         int ret=0;
-        boolean exist=false;
+        
         boolean result=false;    
         Robot robot1=new Robot();
         Rectangle rec=new Rectangle();
@@ -277,7 +277,6 @@ public class input {
                 
                 mycolor = new Color(img.getRGB(w,h));
                 if(colorCheck(mycolor)){
-                    exist=true;
                     ret++;
                     
                   
@@ -333,8 +332,8 @@ public class input {
         Robot robot = new Robot();
         
         robot.mouseMove(580, 1070);
-        robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(500);
         robot.keyPress(KeyEvent.VK_Z);
         robot.delay(500);
@@ -346,8 +345,8 @@ public class input {
         Robot robot = new Robot();
         
         robot.mouseMove(620, 1070);
-        robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         
     }
 
@@ -685,16 +684,17 @@ public class input {
               
    public static void main(String[] args) throws AWTException, InterruptedException{
         Robot ph2=new Robot();
+        
         start();
         
-        // retry();
-        // // openAndStart();
-        // phase1();
-        // System.out.println("it over");
-        // phase1a();
-        // System.out.println("it over again");
-        // phase2a();
-        // System.out.println("end");
+        retry();
+        // openAndStart();
+        phase1();
+        System.out.println("it over");
+        phase1a();
+        System.out.println("it over again");
+        phase2a();
+        System.out.println("end");
         
         
     
